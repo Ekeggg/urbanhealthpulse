@@ -61,7 +61,7 @@ router.get('/city-summary', async (req, res) => {
         return acc;
       }, {});
       const topSymptoms = Object.entries(counts)
-        .sort(([, a], [, b]) => b - a)
+        .sort(([, a], [, b]) => (b as number) - (a as number))
         .slice(0, 3)
         .map(([s]) => s);
       const avgSeverity =
@@ -134,7 +134,7 @@ router.get('/insights/city', async (req, res) => {
         return acc;
       }, {});
       const topSymptoms = Object.entries(counts)
-        .sort(([, a], [, b]) => b - a)
+        .sort(([, a], [, b]) => (b as number) - (a as number))
         .slice(0, 3)
         .map(([s]) => s);
       const avgSeverity =
