@@ -4,7 +4,7 @@ import { analyzePersonal, analyzeCity } from '../lib/claude';
 
 const router = Router();
 
-// For the hackathon, userId is hardcoded. Swap in Clerk later.
+// swap in Clerk later, for now just a demo id
 const USER_ID = 'demo-user';
 
 // POST /api/log
@@ -100,7 +100,7 @@ router.get('/insights/personal', async (req, res) => {
     );
     res.json(analysis);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to analyze personal data' });
+    res.status(500).json({ error: String(error) });
   }
 });
 
@@ -148,6 +148,7 @@ router.get('/insights/city', async (req, res) => {
     res.json(analysis);
   } catch (error) {
     res.status(500).json({ error: 'Failed to analyze city data' });
+
   }
 });
 

@@ -16,6 +16,7 @@ export default function Insights() {
   const fetchPersonal = async () => {
     setLoadingPersonal(true);
     const data = await getPersonalInsights();
+    console.log('personal data:', data);
     setPersonalData(data);
     setLoadingPersonal(false);
   };
