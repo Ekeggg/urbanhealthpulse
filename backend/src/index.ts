@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors({
-  origin: 'https://urbanhealthpulse-production.up.railway.app'
+  origin: 'https://urbanhealthpulse.vercel.app'
 }));
 app.use(express.json());
 app.use('/api', symptomRoutes);
