@@ -1,5 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-
+console.log('API URL:', import.meta.env.VITE_API_URL);
 export const createLog = async (data: {
   symptoms: string[];
   severity: number;
